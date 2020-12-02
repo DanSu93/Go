@@ -10,3 +10,7 @@ func main() {
 func sayHello(name string) {
 	fmt.Println("Hello,", name, "!")
 }
+
+func sayBye(name string) {
+	fmt.Println("Bye,", name, "!")
+}
