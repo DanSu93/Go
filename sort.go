@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"os"
 )
 
 func main() {
@@ -13,7 +12,7 @@ func main() {
 	_, err := fmt.Scanln(&size)
 	if err != nil {
 		fmt.Println("It's not a number!")
-		os.Exit(1)
+		return
 	}
 	slice := rand.Perm(size) // source slice
 
@@ -26,13 +25,12 @@ func main() {
 }
 
 //Function to sort an array using Bubble Sort
-func bubbleSort(a []int) []int {
-	l := len(a)
-	sliceCopy := make([]int, l)
-	copy(sliceCopy, a)
+func bubbleSort(slice []int) []int {
+	sliceCopy := make([]int, len(slice))
+	copy(sliceCopy, slice)
 
-	for i := 0; i < l-1; i++ {
-		for j := 0; j < l-i-1; j++ {
+	for i := 0; i < len(slice)-1; i++ {
+		for j := 0; j < len(slice)-i-1; j++ {
 			if sliceCopy[j] > sliceCopy[j+1] {
 				sliceCopy[j], sliceCopy[j+1] = sliceCopy[j+1], sliceCopy[j]
 			}
@@ -42,18 +40,15 @@ func bubbleSort(a []int) []int {
 }
 
 //Function to sort an array using Insertion Sort
-func insertionSort(a []int) []int {
-	l := len(a)
-	sliceCopy := make([]int, l)
-	copy(sliceCopy, a)
+func insertionSort(slice []int) []int {
+	sliceCopy := make([]int, len(slice))
+	copy(sliceCopy, slice)
 
-	for i := 1; i < l; i++ {
-		j := i
-		for j > 0 {
+	for i := 1; i < len(slice); i++ {
+		for j := i; j > 0; j--  {
 			if sliceCopy[j-1] > sliceCopy[j] {
 				sliceCopy[j-1], sliceCopy[j] = sliceCopy[j], sliceCopy[j-1]
 			}
-			j = j - 1
 		}
 	}
 	return sliceCopy
