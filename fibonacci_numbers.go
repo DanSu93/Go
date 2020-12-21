@@ -35,6 +35,7 @@ func fibSeriesMemoization(num uint32) []uint32 {
 	return fibonacciSlice
 }
 
+// имеем дело с указателями при передаче параметров, хотя явно их не указываем (речь о мапе)
 func fibMemo(num uint32, fMap map[uint32]uint32) uint32 {
 	if num <= 1 {
 		fMap[num] = num
