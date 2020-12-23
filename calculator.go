@@ -12,15 +12,15 @@ func main() {
 	var fx, fy, result float64
 
 	fmt.Print("Введите первое число: ")
-	fmt.Scanln(&x)
+	fmt.Scanln(&x) // явная передача указателя
 	fx = stringToFloat64(x)
 
 	fmt.Print("Введите второе число: ")
 	fmt.Scanln(&y)
-	fy = stringToFloat64(y)
+	fy = stringToFloat64(y) //явная передача указателя
 
 	fmt.Print("Введите арифметическую операцию (+, -, *, /, ^, %): ")
-	fmt.Scanln(&op)
+	fmt.Scanln(&op) //явная передача указателя
 
 	switch op {
 	case "+":

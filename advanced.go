@@ -13,7 +13,7 @@ func main() {
 	var primeArr []int64
 
 	fmt.Print("Введите  число N: ")
-	fmt.Scanln(&n)
+	fmt.Scanln(&n) // явная передача указателя
 	in, err := strconv.ParseInt(n, 0, 64)
 	if err != nil {
 		fmt.Println("Вы ввели не число!")
