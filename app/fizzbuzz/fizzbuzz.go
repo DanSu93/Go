@@ -1,8 +1,8 @@
-package main
+package fizzbuzz
 
 import "fmt"
 
-func main() {
+func fizzbuzz() {
 	var result string
 	for i := 1; i <= 100; i++ {
 		result = ""

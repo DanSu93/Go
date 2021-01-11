@@ -1,4 +1,4 @@
-package main
+package calculator
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func calculate() {
 	var x, y, op string
 	var fx, fy, result float64
 

@@ -1,22 +1,4 @@
-package main
-
-import (
-	"fmt"
-)
-
-func main() {
-	var num uint32
-
-	fmt.Println("Type a number:")
-	_, err := fmt.Scanln(&num)
-	if err != nil {
-		fmt.Println("It's not a number!")
-		return
-	}
-
-	fmt.Println(fibonacci(num))
-	fmt.Println(fibSeriesMemoization(num))
-}
+package fibonacci
 
 func fibonacci(num uint32) uint32 {
 	if num <= 1 {

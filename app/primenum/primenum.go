@@ -1,4 +1,4 @@
-package main
+package primenum
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func findPrimeNumbers() {
 	var n string
 	var in, i int64
 	var primeArr []int64
@@ -21,7 +21,7 @@ func main() {
 	}
 
 	for i = 0; i <= in; i++ {
-		if isSimple(i) {
+		if isPrime(i) {
 			primeArr = append(primeArr, i)
 		}
 	}
@@ -30,10 +30,8 @@ func main() {
 
 }
 
-func isSimple(num int64) bool {
-	var i int64
-	var sqrtNum = int64(math.Sqrt(float64(num)))
-	for i = 2; i < sqrtNum; i++ {
+func isPrime(num int64) bool {
+	for i := int64(2); i <= int64(math.Sqrt(float64(num))); i++ {
 		if num%i == 0 {
 			return false
 		}
