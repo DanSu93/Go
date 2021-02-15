@@ -1,21 +1,17 @@
 package fizzbuzz
 
-import "fmt"
+import "strconv"
 
-func fizzbuzz() {
-	var result string
-	for i := 1; i <= 100; i++ {
-		result = ""
-		if i%3 == 0 {
-			result += "Fizz"
-		}
-		if i%5 == 0 {
-			result += "Buzz"
-		}
-		if result != "" {
-			fmt.Println(result)
-			continue
-		}
-		fmt.Println(i)
+func Fizzbuzz(num uint32) string {
+	if num < 1 {
+		return "Введите число >= 1"
+	} else if num%3 == 0 && num%5 == 0 {
+		return "FizzBuzz"
+	} else if num%3 == 0 {
+		return "Fizz"
+	} else if num%5 == 0 {
+		return "Buzz"
+	} else {
+		return strconv.Itoa(int(num))
 	}
 }
