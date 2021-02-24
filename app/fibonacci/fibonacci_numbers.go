@@ -1,14 +1,21 @@
+// The fibonacci package allows you to compute Fibonacci numbers
+// There are 3 type of functions for calculation: recursive (Fibonacci),
+// optimized recursive with storing the result of the operation (FibSeriesMemoization),
+// iteration in a loop(F)
 package fibonacci
 
-func fibonacci(num uint32) uint32 {
+// Fibonacci return uint32 value of recursive counting of fibonacci numbers
+func Fibonacci(num uint32) uint32 {
 	if num <= 1 {
 		return num
 	} else {
-		return fibonacci(num-1) + fibonacci(num-2)
+		return Fibonacci(num-1) + Fibonacci(num-2)
 	}
 }
 
-func fibSeriesMemoization(num uint32) []uint32 {
+// FibSeriesMemoization return slice of uint32 values get from
+// optimized recursive with storing the result of the operation
+func FibSeriesMemoization(num uint32) []uint32 {
 	fibonacciSlice := make([]uint32, num)
 	fibonacciMap := make(map[uint32]uint32)
 	for i := uint32(1); i <= num; i++ {
@@ -35,6 +42,7 @@ func fibMemo(num uint32, fMap map[uint32]uint32) uint32 {
 	return fMap[num-1] + fMap[num-2]
 }
 
+// F return uint32 value of uint32 get from iteration in a loop
 func F(n uint32) uint32 {
 	if n <= 0 {
 		return 0
