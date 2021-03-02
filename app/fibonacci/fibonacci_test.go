@@ -1,3 +1,7 @@
+// The fibonacci package allows you to compute Fibonacci numbers
+// There are 3 type of functions for calculation: recursive (Fibonacci),
+// optimized recursive with storing the result of the operation (FibSeriesMemoization),
+// iteration in a loop(F)
 package fibonacci
 
 import "testing"
@@ -50,7 +54,7 @@ func TestF(t *testing.T) {
 
 func TestFibonacci(t *testing.T) {
 	for _, tc := range testCases {
-		got := fibonacci(tc.input)
+		got := Fibonacci(tc.input)
 		if got != tc.want {
 			t.Fatalf("input: %v: expected: %v, got: %v", tc.input, tc.want, got)
 		}
@@ -68,7 +72,7 @@ func BenchmarkF(b *testing.B) {
 func BenchmarkFibonacci(b *testing.B) {
 	var res uint32
 	for i := 0; i < b.N; i++ {
-		res = fibonacci(20)
+		res = Fibonacci(20)
 	}
 	result = res
 }
